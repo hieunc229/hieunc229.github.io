@@ -18,14 +18,6 @@
     <p>Wanna see what code belong to what key?<br/>Tryna press something on your keyboard!</p>
   </div>
   <script>
-    var headingElement = document.querySelector('h1')
-    , paragraphElement = document.querySelector('p');
-
-    // The keycode game!
-    document.addEventListener('keydown', function(e) {
-      headingElement.innerText   = e.keyCode
-      paragraphElement.innerText = 'is the keycode you have just pressed!'
-    })
 
     // Hi, Just wanna know when people visit me!
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -35,6 +27,15 @@
 
     ga('create', 'UA-109251894-1', 'auto');
     ga('send', 'pageview');
+
+    var headingElement = document.querySelector('h1')
+    , paragraphElement = document.querySelector('p');
+
+    // The keycode game!
+    document.addEventListener('keydown', function(e) {
+      headingElement.innerText   = e.keyCode
+      paragraphElement.innerText = 'is the keycode you have just pressed!'
+    })
 
   </script>
 </body>

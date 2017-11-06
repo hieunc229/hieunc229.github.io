@@ -21,7 +21,7 @@ h2,
 h3 {
   font-family: var(--sans);
   font-weight: bold;
-  line-height: 1.3em;
+  line-height: 1.5em;
 }
 
 p,
@@ -83,7 +83,7 @@ blockquote.quote__lrg::before {
     opacity: .5;
 }
 
-.editor--tools {
+.editor__tools {
     margin: auto;
     width: 100%;
     top: 0;
@@ -93,7 +93,7 @@ blockquote.quote__lrg::before {
     left: 0;
 }
 
-.editor--tools button {
+.editor__tools button {
   border: none;
   font-size: 14px;
   background: none;
@@ -102,7 +102,7 @@ blockquote.quote__lrg::before {
   position: relative;
 }
 
-.editor--tools button .tooltip {
+.editor__tools button .tooltip {
     visibility: hidden;
     width: 150px;
     background-color: black;
@@ -117,25 +117,25 @@ blockquote.quote__lrg::before {
     left: calc(-150%);
     top: calc(100% + 5px);
 }
-.editor--tools button .fa {
+.editor__tools button .fa {
     transform: .2s;
     -webkit-transform: .2s;
 }
-.editor--tools button:hover .tooltip {
+.editor__tools button:hover .tooltip {
     visibility: visible;
 }
-.editor--tools button .fa::before { 
+.editor__tools button .fa::before { 
     color: white;
 }
-.editor--tools button:hover .fa {
+.editor__tools button:hover .fa {
     transform: scale(1.2);
 }
 
-.editor--tools button:hover {
+.editor__tools button:hover {
   background: black;
   color: white;
 }
 
-.editor--tools button.action--active .fa:before {
+.editor__tools button.action--active .fa:before {
   color: red;
 }

@@ -13,7 +13,20 @@
 </head>
 
 <body>
+  <div class="content__wrap">  
     <h1>Oh hey!</h1>
+    <p>Wanna see what code belong to what key?<br/>Tryna press something on your keyboard!</p>
+  </div>
+  <script>
+    var headingElement = document.querySelector('h1')
+    , paragraphElement = document.querySelector('p');
+
+    document.addEventListener('keydown', function(e) {
+      headingElement.innerText   = e.keyCode
+      paragraphElement.innerText = 'is the keycode you have just pressed!'
+    })
+
+  </script>
 </body>
 
 </html>

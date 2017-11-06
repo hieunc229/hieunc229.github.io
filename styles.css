@@ -7,11 +7,15 @@ body {
     align-items: center;
     height: 90vh;
     text-align: center;
+    color: white;
+    line-height: 1.5em;
 }
 
 h1 {
-    color: white;
-    margin: auto;
     font-size: 76px;
     font-weight: 200;
+}
+.content__wrap {
+    text-align: center;
+    width: 100%;
 }

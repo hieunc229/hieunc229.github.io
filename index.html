@@ -16,6 +16,7 @@
   <div class="content__wrap">  
     <h1>Oh hey!</h1>
     <p>Wanna see what code belong to what key?<br/>Tryna press something on your keyboard!</p>
+    <p style="display: none"><b>Keycodes you pressed:</b> </p>
   </div>
   <script>
 
@@ -29,12 +30,17 @@
     ga('send', 'pageview');
 
     var headingElement = document.querySelector('h1')
-    , paragraphElement = document.querySelector('p');
+    , paragraphElement = document.querySelector('p')
+    , historyElement   = document.querySelectorAll('p')[1]
+    , historyList      = [];
 
     // The keycode game!
     document.addEventListener('keydown', function(e) {
       headingElement.innerText   = e.keyCode
       paragraphElement.innerText = 'is the keycode you have just pressed!'
+
+      historyElement.style.display = 'block'
+      historyElement.innerHTML += e.keyCode + ', ';
     })
 
   </script>

@@ -10,12 +10,17 @@ body {
     color: white;
     line-height: 1.5em;
 }
-
-h1 {
-    font-size: 76px;
-    font-weight: 200;
-}
 .content__wrap {
     text-align: center;
     width: 100%;
 }
+
+    h1 {
+        font-size: 76px;
+        font-weight: 200;
+    }
+
+    p {
+        max-width: 600px;
+        margin: 0 auto;
+    }

@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css?family=Lora:400,400i,700|Open+Sans:400,400i,700|Noto+Serif:400,400i,700&amp;subset=vietnamese');
+:root {
+    --sans: 'Open Sans', sans-serif;
+    --serif: 'Noto Serif', serif;
+}
+body {
+  font-size: 18px;
+  font-family: var(--serif);
+  background: white;
+  line-height: 1.8em;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 2.827em;
+  margin-bottom: .5em;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--sans);
+  font-weight: bold;
+  line-height: 1.5em;
+}
+
+p,
+ul {
+  margin: 1em auto;
+  text-align: justify;
+}
+
+ul {
+  list-style-type: circle;
+  padding: 0 1em;
+}
+
+figure {
+    width: 100%;
+    margin: auto 0;
+}
+figure img { width: 100% }
+figure figcaption { 
+    font-family: var(--sans);
+    font-size: .7em;
+    text-align: center;
+    line-height: 1.5em;
+}
+
+blockquote:not(.quote__lrg) {
+    padding-left: 1em;
+    font-style: italic;
+}
+blockquote::before {
+    content: "“";
+    font-size: 2em;
+    font-family: cursive;
+    transform: translate(-10px, 10px);
+    display: inline-block;
+}
+blockquote.quote__lrg {
+    font-size: 1.999em;
+    font-family: var(--sans);
+    line-height: 1.5em;
+    font-style: italic;
+}
+blockquote.quote__lrg::before {
+    font-size: 2em;
+}
+
+.editor {
+  margin: 20px;
+  padding-top: 20px;
+  width: 600px;
+  margin: auto;
+}
+
+.editor:focus {
+  outline: none;
+}
+.editor__placeholder {
+    font-style: italic;
+    opacity: .5;
+}
+
+.editor--tools {
+    margin: auto;
+    width: 100%;
+    top: 0;
+    background: black;
+    position: fixed;
+    text-align: center;
+    left: 0;
+}
+
+.editor--tools button {
+  border: none;
+  font-size: 14px;
+  background: none;
+  padding: 1em;
+  outline: none;
+  position: relative;
+}
+
+.editor--tools button .tooltip {
+    visibility: hidden;
+    width: 150px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: .5em 1em;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    left: calc(-150%);
+    top: calc(100% + 5px);
+}
+.editor--tools button .fa {
+    transform: .2s;
+    -webkit-transform: .2s;
+}
+.editor--tools button:hover .tooltip {
+    visibility: visible;
+}
+.editor--tools button .fa::before { 
+    color: white;
+}
+.editor--tools button:hover .fa {
+    transform: scale(1.2);
+}
+
+.editor--tools button:hover {
+  background: black;
+  color: white;
+}
+
+.editor--tools button.action--active .fa:before {
+  color: red;
+}

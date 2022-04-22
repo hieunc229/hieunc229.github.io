@@ -1,48 +1,57 @@
-
 <!doctype html>
 
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
+    <meta charset="utf-8">
 
-  <title>hieunc229's Github Page</title>
-  <meta name="description" content="hieunc229's github page">
-  <meta name="author" content="Hieu (Jack) Nguyen">
-  <link rel="stylesheet" href="styles.css?v=1.0">
+    <title>hieunc229's Github Page</title>
+    <meta name="description" content="hieunc229's github page">
+    <meta name="author" content="Hieu (Jack) Nguyen">
+    <link rel="stylesheet" href="styles.css?v=1.0">
 </head>
 
 <body>
-  <div class="content__wrap">  
+<div class="content__wrap">
     <h1>Oh hey!</h1>
     <p>Do you know each key of the keyboard has a number?<br/>Tryna press something on your keyboard!</p>
-    <p style="display: none"><b>Previous keycodes:</b> </p>
-  </div>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109251894-1"></script>
-  <script>
+    <p style=""><b></b></p>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109251894-1"></script>
+<script>
 
     // Hi, Just wanna know when people visit me!
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
     gtag('js', new Date());
     gtag('config', 'UA-109251894-1');
-    
 
-    var headingElement = document.querySelector('h1')
-    , paragraphElement = document.querySelector('p')
-    , historyElement   = document.querySelectorAll('p')[1]
-    , historyList      = [];
+    let numbers = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
+
+    let headingElement = document.querySelector('h1')
+        , paragraphElement = document.querySelector('p')
+        , historyElement = document.querySelectorAll('p')[1]
+        , historyList = [];
+
+    function generateHistoryString() {
+        return historyList.slice().reverse().join(', ');
+    }
 
     // The keycode game!
-    document.addEventListener('keydown', function(e) {
-      headingElement.innerText   = e.keyCode
-      paragraphElement.innerText = 'is the number of the pressed key!'
+    document.addEventListener('keydown', function (e) {
+        headingElement.innerText = e.keyCode
+        paragraphElement.innerText = 'is the number of the pressed key!'
 
-      historyElement.style.display = 'block'
-      historyElement.innerHTML += e.keyCode + ', ';
+        historyList.unshift(e.keyCode)
+        historyList = historyList.slice(0, 10)
+        historyElement.innerHTML = 'Previous ' + numbers[historyList.length] + ' keycodes: ' + generateHistoryString();
     })
 
-  </script>
+</script>
 </body>
 
 </html>
